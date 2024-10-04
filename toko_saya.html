@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 15px;
+            height: 100vh;
+        }
+        .content {
+            width: 80%;
+            padding: 15px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            background-color: #ddd;
+            margin-bottom: 5px;
+        }
+        .sidebar ul li:hover {
+            background-color: #ccc;
+        }
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+        .hero-section h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .about-section, .menu-section, .contact-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .about-section {
+            background-color: #f9f9f9;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-section form input,
+        .contact-section form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Toko Online</h1>
+</header>
+
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>About Us</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Welcome to Our Online Store</h1>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>We offer the best products at affordable prices. Quality is our priority!</p>
+        </div>
+
+        <!-- Product Menu Section -->
+        <div class="menu-section">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/0/0c/Liverpool_FC.svg/185px-Liverpool_FC.svg.png" alt="Product 1" onclick="openModal('modal1')">
+                    <h3>Product 1</h3>
+                    <p>Price: $100</p>
+                </div>
+                <!-- Modal for Product 1 -->
+                <div id="modal1" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('modal1')">&times;</span>
+                        <h2>Product 1</h2>
+                        <p>Description: This is a great product for your needs!</p>
+                        <p>Details: High-quality, durable, and affordable.</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/0/0c/Liverpool_FC.svg/185px-Liverpool_FC.svg.png" alt="Product 2" onclick="openModal('modal2')">
+                    <h3>Product 2</h3>
+                    <p>Price: $150</p>
+                </div>
+                <!-- Modal for Product 2 -->
+                <div id="modal2" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('modal2')">&times;</span>
+                        <h2>Product 2</h2>
+                        <p>Description: This product offers great features!</p>
+                        <p>Details: Top-notch design and user-friendly.</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/0/0c/Liverpool_FC.svg/185px-Liverpool_FC.svg.png" alt="Product 3" onclick="openModal('modal3')">
+                    <h3>Product 3</h3>
+                    <p>Price: $200</p>
+                </div>
+                <!-- Modal for Product 3 -->
+                <div id="modal3" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('modal3')">&times;</span>
+                        <h2>Product 3</h2>
+                        <p>Description: The best product for daily use!</p>
+                        <p>Details: Stylish, comfortable, and practical.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Toko Online. All rights reserved.</p>
+</footer>
+
+<script>
+    // Open Modal
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    // Close Modal
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+</script>
+
+</body>
+</html>
